@@ -1,0 +1,39 @@
+{
+  "name": "remaster-app",
+  "version": "1.2.5",
+  "author": "Ekelo",
+  "description": "Audio enhancement studio right on your PC. Equalizer, effects, bass boost, and track export. All processing is done locally, with no servers involved.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11"
+  },
+  "build": {
+    "appId": "com.remaster.app",
+    "productName": "Remaster",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Ekelo",
+        "repo": "remaster"
+      }
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
+  }
+}
